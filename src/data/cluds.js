@@ -1,0 +1,22 @@
+const clubs = [
+  {
+    id: 1,
+    name: "Coding Club",
+    description: "Learn Programming",
+    coordinator: "Rahul"
+  },
+  {
+    id: 2,
+    name: "Photography Club",
+    description: "Capture Memories",
+    coordinator: "Anjali"
+  },
+  {
+    id: 3,
+    name: "Dance Club",
+    description: "Perform at College Events",
+    coordinator: "Kiran"
+  }
+];
+
+export default clubs;
