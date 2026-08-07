@@ -1,35 +1,42 @@
-import DashboardLayout from "./layouts/DashboardLayout";
-import Card from "./components/Card";
-import Button from "./components/Button";
-import Input from "./components/Input";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import StudentDashboard from "./pages/student/StudentDashboard";
+import ExploreClubs from "./pages/student/ExploreClubs";
+import ClubDetails from "./pages/student/ClubDetails";
+
 
 function App() {
+
   return (
-    <DashboardLayout>
-      <h1 className="text-3xl font-bold mb-6">
-        ClubHub UI Foundation
-      </h1>
 
-      <Card
-        title="Student Login"
-        description="Reusable Input Component Example"
-      >
-        <Input
-          label="Email"
-          type="email"
-          placeholder="Enter your email"
+    <BrowserRouter>
+
+      <Routes>
+
+        <Route
+          path="/student/dashboard"
+          element={<StudentDashboard />}
         />
 
-        <Input
-          label="Password"
-          type="password"
-          placeholder="Enter your password"
+
+        <Route
+          path="/clubs"
+          element={<ExploreClubs />}
         />
 
-        <Button text="Login" variant="primary" />
-      </Card>
-    </DashboardLayout>
+
+        <Route
+          path="/clubs/:id"
+          element={<ClubDetails />}
+        />
+
+      </Routes>
+
+    </BrowserRouter>
+
   );
+
 }
+
 
 export default App;
