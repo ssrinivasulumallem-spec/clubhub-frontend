@@ -1,47 +1,14 @@
-import { useState } from 'react';
-import ClubCard from './ClubCard';
+import ClubCard from "./ClubCard";
+import { useClubs } from "../../context/ClubsContext";
 
 function ManageClubs() {
+  const { clubs, addClub, deleteClub } = useClubs();
 
-  const [clubs, setClubs] = useState([
-    {
-      name: "Coding Club",
-      coordinator: "Rahul",
-      members: "150",
-      color: "bg-blue-600"
-    },
-    {
-      name: "Dance Club",
-      coordinator: "Anjali",
-      members: "95",
-      color: "bg-pink-600"
-    },
-    {
-      name: "Photography Club",
-      coordinator: "Kiran",
-      members: "70",
-      color: "bg-green-600"
-    },
-    {
-      name: "Music Club",
-      coordinator: "Sneha",
-      members: "120",
-      color: "bg-purple-600"
-    }
-  ]);
-
-  const addClub = () => {
+  const handleAddClub = () => {
     const clubName = prompt("Enter club name:");
 
     if (clubName && clubName.trim() !== "") {
-      const newClub = {
-        name: clubName,
-        coordinator: "Not Assigned",
-        members: "0",
-        color: "bg-indigo-600"
-      };
-
-      setClubs([...clubs, newClub]);
+      addClub(clubName);
     }
   };
 
@@ -55,7 +22,7 @@ function ManageClubs() {
         </h2>
 
         <button
-          onClick={addClub}
+          onClick={handleAddClub}
           className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
         >
           + Add Club
@@ -65,13 +32,14 @@ function ManageClubs() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-        {clubs.map((club, index) => (
+        {clubs.map((club) => (
           <ClubCard
-            key={index}
+            key={club.id}
             name={club.name}
             coordinator={club.coordinator}
             members={club.members}
             color={club.color}
+            onDelete={() => deleteClub(club.id)}
           />
         ))}
 

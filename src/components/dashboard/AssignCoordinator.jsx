@@ -1,4 +1,26 @@
+import { useState } from "react";
+import { useClubs } from "../../context/ClubsContext";
+
 function AssignCoordinator() {
+  const { clubs, assignCoordinator } = useClubs();
+
+  const [selectedClub, setSelectedClub] = useState("");
+  const [selectedCoordinator, setSelectedCoordinator] = useState("");
+
+  const handleAssign = () => {
+    if (!selectedClub || !selectedCoordinator) {
+      alert("Please select both club and coordinator.");
+      return;
+    }
+
+    assignCoordinator(selectedClub, selectedCoordinator);
+
+    alert("Coordinator assigned successfully!");
+
+    setSelectedClub("");
+    setSelectedCoordinator("");
+  };
+
   return (
     <div className="bg-white rounded-xl shadow-md p-6">
 
@@ -8,33 +30,58 @@ function AssignCoordinator() {
 
       <div className="space-y-4">
 
+        {/* Select Club */}
         <div>
           <label className="block mb-2 font-medium">
             Select Club
           </label>
 
-          <select className="w-full border rounded-lg p-3">
-            <option>Coding Club</option>
-            <option>Dance Club</option>
-            <option>Photography Club</option>
-            <option>Music Club</option>
+          <select
+            value={selectedClub}
+            onChange={(e) => setSelectedClub(e.target.value)}
+            className="w-full border rounded-lg p-3 bg-white"
+          >
+            <option value="">
+              Select Club
+            </option>
+
+            {clubs.map((club) => (
+              <option key={club.id} value={club.id}>
+                {club.name}
+              </option>
+            ))}
           </select>
         </div>
 
+        {/* Select Coordinator */}
         <div>
           <label className="block mb-2 font-medium">
             Select Coordinator
           </label>
 
-          <select className="w-full border rounded-lg p-3">
-            <option>Rahul</option>
-            <option>Anjali</option>
-            <option>Kiran</option>
-            <option>Sneha</option>
+          <select
+            value={selectedCoordinator}
+            onChange={(e) =>
+              setSelectedCoordinator(e.target.value)
+            }
+            className="w-full border rounded-lg p-3 bg-white"
+          >
+            <option value="">
+              Select Coordinator
+            </option>
+
+            <option value="Rahul">Rahul</option>
+            <option value="Anjali">Anjali</option>
+            <option value="Kiran">Kiran</option>
+            <option value="Sneha">Sneha</option>
           </select>
         </div>
 
-        <button className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700">
+        {/* Assign Button */}
+        <button
+          onClick={handleAssign}
+          className="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700"
+        >
           Assign Coordinator
         </button>
 
