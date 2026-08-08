@@ -1,7 +1,6 @@
 import Layout from "../../components/layout/Layout";
 import ProfileSettings from "../../components/settings/ProfileSettings";
 import PasswordSettings from "../../components/settings/PasswordSettings";
-import NotificationSettings from "../../components/settings/NotificationSettings";
 
 
 function Settings() {
@@ -11,7 +10,6 @@ function Settings() {
 
       <ProfileSettings />
       <PasswordSettings />
-      <NotificationSettings />
     </Layout>
   );
 }

@@ -32,12 +32,7 @@ function Sidebar() {
     </a>
   </li>
 
-  <li className="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-700 cursor-pointer">
-    <a href="/#join-requests" className="flex items-center gap-3 w-full">
-      <HiOutlineUserGroup className="text-xl" />
-      <span>Join Requests</span>
-    </a>
-  </li>
+
 
   <li className="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-700 cursor-pointer">
     <a href="/#manage-clubs" className="flex items-center gap-3 w-full">
@@ -68,13 +63,7 @@ function Sidebar() {
     </a>
   </li>
 
-  <li className="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-700 cursor-pointer">
-    <a href="/#quick-actions" className="flex items-center gap-3 w-full">
-      <HiOutlineSpeakerWave className="text-xl" />
-      <span>Quick actions</span>
-    </a>
-  </li>
-
+  
 
 
 

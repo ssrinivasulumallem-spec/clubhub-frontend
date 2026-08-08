@@ -2,7 +2,7 @@ import StatCard from "./StatCard";
 
 function DashboardCards() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
       <StatCard
         title="Total Clubs"
@@ -16,12 +16,7 @@ function DashboardCards() {
         color="text-green-600"
       />
 
-      <StatCard
-        title="Pending Requests"
-        value="27"
-        color="text-red-600"
-      />
-
+    
       <StatCard
         title="Events Conducted"
         value="62"

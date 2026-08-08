@@ -12,18 +12,10 @@ function QuickActions() {
           + Add Club
         </button>
 
-        <button className="bg-green-600 text-white p-4 rounded-lg hover:bg-green-700">
-          + Add Event
-        </button>
+        
 
-        <button className="bg-purple-600 text-white p-4 rounded-lg hover:bg-purple-700">
-          + Add Student
-        </button>
-
-        <button className="bg-orange-500 text-white p-4 rounded-lg hover:bg-orange-600">
-          Generate Report
-        </button>
-
+        
+        
       </div>
 
     </div>

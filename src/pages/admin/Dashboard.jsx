@@ -2,12 +2,11 @@
 import AdminLayout from "../../components/layout/Layout";
 import WelcomeSection from "../../components/dashboard/WelcomeSection";
 import DashboardCards from "../../components/dashboard/DashboardCards";
-import PendingRequests from "../../components/dashboard/PendingRequests";
 import ManageClubs from "../../components/dashboard/ManageClubs";
 import AssignCoordinator from "../../components/dashboard/AssignCoordinator";
 import RecentActivity from "../../components/dashboard/RecentActivity";
 import DashboardChart from "../../components/dashboard/DashboardChart";
-import QuickActions from "../../components/dashboard/QuickActions";
+
 
 function Dashboard() {
   return (
@@ -23,11 +22,7 @@ function Dashboard() {
       </section>
 
       {/* Pending Requests & Manage Clubs */}
-      <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 mt-8">
-
-        <section id="join-requests">
-          <PendingRequests />
-        </section>
+      <div className="mt-6">
 
         <section id="manage-clubs">
           <ManageClubs />
@@ -53,11 +48,7 @@ function Dashboard() {
         <DashboardChart />
       </section>
 
-      {/* Quick Actions */}
-      <section id="quick-actions" className="mt-8">
-        <QuickActions />
-      </section>
-
+      
 
       
       
